@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="app_color">#1c201f</color>
+    <color name="loginCardColor">#484a49</color>
+    <color name="loginBtnCardColor">#ff5757</color>
+    <color name="ColorGreen">#06910C</color>
+    <color name="appTextColor">#DBDCDB</color>
+</resources>
