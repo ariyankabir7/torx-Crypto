@@ -54,4 +54,5 @@ dependencies {
     implementation ("androidx.browser:browser:1.8.0")
     implementation("com.android.volley:volley:1.2.1")
     implementation("com.airbnb.android:lottie:6.4.0")
+    implementation ("com.google.code.gson:gson:2.8.9")
 }

@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_color"
+    android:background="@color/white"
     tools:context=".LoginActivity">
 
     <LinearLayout
@@ -25,102 +25,93 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_150sdp"
-                android:text="Login"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_36ssp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="36dp"
+                android:text="Log in"
+                android:textColor="@color/app_color"
+                android:textSize="@dimen/_25ssp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:layout_constraintTop_toTopOf="@+id/textView">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/webnexa"/>
+
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:id="@+id/tv_subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="Sign in to continue"
-                android:textColor="#704143"
-                app:layout_constraintEnd_toEndOf="@+id/textView"
+                android:text="Check in to your account."
+                android:textColor="@color/homeSubtitle"
                 app:layout_constraintStart_toStartOf="@+id/textView"
                 app:layout_constraintTop_toBottomOf="@id/textView" />
 
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_40sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:text="Name"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_subtitle" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cv_name"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_email"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginHorizontal="@dimen/_40sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:backgroundTint="@color/loginCardColor"
-                app:cardCornerRadius="@dimen/_20sdp"
-                app:layout_constraintTop_toBottomOf="@+id/tv_name">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30ssp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_subtitle">
 
-                <EditText
-                    android:id="@+id/et_name"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#00FFFFFF"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_16ssp" />
+                    android:layout_height="wrap_content"
+                    android:hint="Email Id"
+                    android:inputType="textEmailAddress"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-            </com.google.android.material.card.MaterialCardView>
-
-            <TextView
-                android:id="@+id/tv_password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_40sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:text="Password"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cv_name" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cv_password"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_password"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginHorizontal="@dimen/_40sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:backgroundTint="@color/loginCardColor"
-                app:cardCornerRadius="@dimen/_20sdp"
-                app:layout_constraintTop_toBottomOf="@+id/tv_password">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tl_email">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_password"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#00FFFFFF"
-                    android:gravity="center"
-                    android:inputType="textPassword"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_16ssp" />
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:inputType="textPassword"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-
-            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:id="@+id/tv_forgetpassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="Forget Password ?"
+                android:textColor="@color/app_color"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tl_password" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cv_login"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_35sdp"
-                android:layout_marginHorizontal="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_20sdp"
-                android:backgroundTint="@color/loginBtnCardColor"
-                app:cardCornerRadius="@dimen/_8sdp"
-                app:layout_constraintTop_toBottomOf="@+id/cv_password">
+                android:backgroundTint="@color/app_color"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_forgetpassword">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -134,39 +125,37 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/tv_forgetpassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:text="Forget Password ?"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cv_login" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/tv_signup"
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_35sdp"
-                android:layout_marginHorizontal="@dimen/_40sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_20sdp"
-                android:backgroundTint="@color/ColorGreen"
-                app:cardCornerRadius="@dimen/_8sdp"
-                app:layout_constraintTop_toBottomOf="@+id/tv_forgetpassword">
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/cv_login">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Dont have account ?"
+                    android:textColor="@color/homeSubtitle"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tv_signup"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Sign Up"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_16ssp"
+                    android:text=" Register Now"
+                    android:textColor="@color/app_color"
+                    android:textSize="@dimen/_13ssp"
                     android:textStyle="bold" />
 
 
-            </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>

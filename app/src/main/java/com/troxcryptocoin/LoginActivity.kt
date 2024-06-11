@@ -4,10 +4,12 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.Snackbar
 import com.troxcryptocoin.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -20,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             val insetsController = ViewCompat.getWindowInsetsController(v)
-            insetsController?.isAppearanceLightStatusBars = false
+            insetsController?.isAppearanceLightStatusBars = true
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
@@ -31,6 +33,26 @@ class LoginActivity : AppCompatActivity() {
           startActivity(intent)
           finish()
       }
+        binding.cvLogin.setOnClickListener {
+            if(((binding.etEmail.text.toString()!= "") && (binding.etPassword.text.toString()!=""))){
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }else{
+                Snackbar.make(
+                    binding.root,
+                    "Fill Details Properly !", Snackbar.LENGTH_LONG)
+                    .setAction("ok") {
+                        // Responds to click on the action
+                    }
+                    .setTextColor(resources.getColor(R.color.white))
+                    .setBackgroundTint(resources.getColor(R.color.red))
+                    .setActionTextColor(resources.getColor(R.color.white))
+                    .show()
+
+            }
+          
+        }
     }
     override fun onBackPressed() {
         finish()
